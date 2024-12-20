@@ -1,0 +1,1185 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mano Sir</title>
+  <link rel="icon" type="image/x-icon" href="xinix.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap');
+
+    :root {
+      --lavender: #E6E6FA;
+      --deep-lavender: #007AFF;
+      --light-lavender: #e9e3e3;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: black;
+      color: #807d7d;
+      overflow-x: hidden;
+      cursor: url("./pointer.png"), auto;
+      
+    }
+
+    .navbar {
+      background-color: var(--deep-lavender);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: white !important;
+    }
+
+    .navbar-brand {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.5rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: 'Pacifico', cursive;
+      color: var(--deep-lavender);
+    }
+
+    .btn-custom {
+      border-radius: 50px;
+      background-color: var(--deep-lavender);
+      border: none;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .btn-custom:hover {
+      background-color: #0051A3;
+      transform: scale(1.05);
+      color: white;
+    }
+
+    .btn-custom:active {
+      background-color: #003D7A;
+      transform: scale(1.05);
+      color: white;
+    }
+
+    .card {
+      border: none;
+      box-shadow: 0 4px 6px rgba(111, 135, 190, 0.861);
+      transition: all 0.3s ease;
+      background-color: var(--light-lavender);
+
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .footer {
+      background-color: var(--deep-lavender);
+      color: white;
+      padding-top: 20px ;
+      padding-bottom: 9px;
+    }
+
+    #confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .modal-content {
+      background-color: var(--light-lavender);
+    }
+
+    .modal-header {
+      background-color: var(--deep-lavender);
+      color: white;
+    }
+
+    .icon-feature {
+      font-size: 3rem;
+      color: var(--deep-lavender);
+      margin-bottom: 1rem;
+    }
+
+    .timeline {
+
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: var(--deep-lavender);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+
+    .timeline-container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+    .timeline-container::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: var(--light-lavender);
+      border: 4px solid var(--deep-lavender);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .left {
+      left: 0;
+    }
+
+    .right {
+      left: 50%;
+    }
+
+    .left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid var(--deep-lavender);
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent var(--deep-lavender);
+    }
+
+    .right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid var(--deep-lavender);
+      border-width: 10px 10px 10px 0;
+      border-color: transparent var(--deep-lavender) transparent transparent;
+    }
+
+    .right::after {
+      left: -16px;
+    }
+
+    .timeline-content {
+      background-color: var(--light-lavender);
+      padding: 20px 30px;
+      /* background-color: white; */
+      position: relative;
+      border-radius: 6px;
+    }
+
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .parallax-text {
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .testimonial {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .playlist {
+      background-color: var(--light-lavender);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .playlist-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .playlist-item i {
+      margin-right: 10px;
+    }
+
+    .why-me-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .why-me-icon {
+      font-size: 2rem;
+      color: var(--deep-lavender);
+      margin-right: 15px;
+    }
+
+    .floating {
+      animation-name: floating;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+
+    @keyframes floating {
+      0% {
+        transform: translate(0, 0px);
+      }
+
+      50% {
+        transform: translate(0, 15px);
+      }
+
+      100% {
+        transform: translate(0, -0px);
+      }
+    }
+
+    .heart-trail {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    .doodle {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .music-notes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9997;
+    }
+
+    .music-note {
+      position: absolute;
+      font-size: 24px;
+      color: var(--deep-lavender);
+      opacity: 0;
+    }
+
+    .surprise-box {
+      width: 200px;
+      height: 200px;
+      background-color: var(--deep-lavender);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0 auto;
+    }
+
+    .surprise-box:hover {
+      transform: scale(1.05);
+    }
+
+    .surprise-box i {
+      font-size: 4rem;
+      color: white;
+    }
+
+    /* #whyMeContent {
+      display: none;
+    } */
+
+    @media screen and (max-width: 600px) {
+      .timeline::after {
+        left: 31px;
+      }
+
+      .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+      .timeline-container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+      .left::after,
+      .right::after {
+        left: 15px;
+      }
+
+      .right {
+        left: 0%;
+      }
+    }
+
+    .playlist {
+      background-color: var(--light-lavender);
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .playlist-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .playlist-item i {
+      margin-right: 10px;
+    }
+
+    .why-me-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .why-me-icon {
+      font-size: 2rem;
+      color: var(--deep-lavender);
+      margin-right: 15px;
+    }
+
+    .floating {
+      animation-name: floating;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+
+    @keyframes floating {
+      0% {
+        transform: translate(0, 0px);
+      }
+
+      50% {
+        transform: translate(0, 15px);
+      }
+
+      100% {
+        transform: translate(0, -0px);
+      }
+    }
+
+    .heart-trail {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    .doodle {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .music-notes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9997;
+    }
+
+    .music-note {
+      position: absolute;
+      font-size: 24px;
+      color: var(--deep-lavender);
+      opacity: 0;
+    }
+
+    #audioPlayer {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .timeline::after {
+        left: 31px;
+      }
+
+      .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+      .timeline-container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+      .left::after,
+      .right::after {
+        left: 15px;
+      }
+
+      .right {
+        left: 0%;
+      }
+    }
+
+    .date-image {
+      max-width: 70%;
+      height: auto;
+
+
+    }
+
+    #why-you{
+      border: 2px solid var(--deep-lavender);
+      border-radius: 20px;
+    }
+    #the-date{
+      border: 2px solid var(--deep-lavender);
+      border-radius: 20px;
+    }
+    #testimonials{
+      border: 2px solid var(--deep-lavender);
+      border-radius: 20px;
+    }
+
+    ::selection {
+    color: #007AFF;
+    background-color: #000;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #007AFF;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0051A3;
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: #003D7A;
+  }
+  
+  ::-webkit-scrollbar-corner {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-button {
+  display: none;
+}
+
+#iframe-container {
+            position: relative;
+            width: 1080px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 5px;
+            border: 5px solid transparent;
+            box-sizing: border-box; 
+            animation: move-border 4s linear infinite; 
+            -webkit-mask-image: radial-gradient(white, black);
+        }
+
+        @keyframes move-border {
+            0% {
+                border-image: linear-gradient(90deg, #007AFF, black) 1;
+            }
+            25% {
+                border-image: linear-gradient(180deg, #007AFF, black) 1;
+            }
+            50% {
+                border-image: linear-gradient(270deg, #007AFF, black) 1;
+            }
+            75% {
+                border-image: linear-gradient(360deg, #007AFF, black) 1;
+            }
+            100% {
+                border-image: linear-gradient(90deg, #007AFF, black) 1;
+            }
+        }
+
+        #iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .watermark-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 890px;
+            width: 100%;
+            height: 56px;
+            background: #000;
+            z-index: 10;
+            border-radius: 20px;
+        }
+
+        #ifram{
+            position: relative;
+            width: 1100px;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 5px;
+            border: 5px solid transparent;
+            box-sizing: border-box; 
+            animation: move-border 4s linear infinite; 
+            -webkit-mask-image: radial-gradient(white, black);
+        }
+
+        #ifra{
+            position: relative;
+            width: 1129px;
+            height: 940px;
+            overflow: hidden;
+            border-radius: 5px;
+            border: 5px solid transparent;
+            box-sizing: border-box; 
+            animation: move-border 4s linear infinite; 
+            -webkit-mask-image: radial-gradient(white, black);
+        }
+
+        #ifr {
+            position: relative;
+            width: 1100px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 5px;
+            border: 5px solid transparent;
+            box-sizing: border-box;
+            animation: move-border 4s linear infinite;
+            -webkit-mask-image: radial-gradient(white, black);
+        }
+
+        #ifr iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+
+        #if {
+            position: relative;
+            margin-top: 30px;
+            width: 1100px;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 5px;
+            border: 5px solid transparent;
+            box-sizing: border-box;
+            animation: move-border 4s linear infinite;
+            -webkit-mask-image: radial-gradient(white, black);
+        }
+
+        #if iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+
+        .cart{
+          color: #fff;
+          text-align: left;
+          padding-left: 400px;
+          margin-top: 10px;
+        }
+
+        .ca{
+          color: #fff;
+          text-align: center;
+          margin-top: 10px;
+        }
+
+        #ds{
+          color: #fff;
+          text-align: center;
+          width: 740px;
+        }
+
+        #bot{
+          margin-left: 380px;
+          padding-right: 10px;
+        }
+        
+        #bot1{
+          margin-left: 120px;
+          margin-right: 200px;
+        }
+
+        #bot2{
+          margin-left: 120px;
+          margin-right: 200px;
+        }
+
+        #bot3{
+          margin-left: 50px;
+          margin-right: 200px;
+        }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container justify-content-center">
+      <a class="navbar-brand " href="./index.html">Farewell Sir <i class="fas fa-heart"></i></a>
+
+    </div>
+  </nav>
+
+  <div id="home" class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h1   class="display-4 mb-5 mt-5 ">Will you come back to visit us sometime <i class="fas fa-question "></i></h1>
+        <p data-aos="fade-right" data-aos-duration="700" class="lead mb-4" id="ds">Dear Sir,
+
+          It's hard to imagine the school without you. You've not only taught us about computers but also showed us the value of curiosity, problem-solving, and perseverance. Your passion for technology and teaching has been truly inspiring, and it will leave a lasting mark on all of us.
+          
+          Thank you for your patience, encouragement, and all the knowledge you've shared with us. Your lessons went beyond the classroom - they helped shape the way we think, approach challenges, and continue to learn. You will be missed, but your influence will always be with us as we continue to grow.
+          
+          Wishing you all the best in your next adventure. Your legacy here will never be forgotten.
+        <br>
+        <br>Now Please Answer The Question 😊
+        </p>
+        <button  data-aos="fade-right" data-aos-duration="1100" class="btn btn-custom btn-lg mt-4 mb-5 " onclick="showModal()">Yes, I'd Love To! <i
+            class="fas fa-check"></i></button>
+
+      </div>
+    </div>
+  </div>
+  <div id="ifram" class="container py-5">
+    <h2 class="text-center mb-5">You Are The Best Because <i class="fas fa-heart"></i></h2>
+    <div class="row">
+      <div class="col-md-4 mb-4 " data-aos="fade-up" data-aos-duration="700">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-smile icon-feature floating"></i>
+            <h5 class="card-title">Your Radiant Smile</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-duration="900">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-hand-holding-heart icon-feature floating"></i>
+            <h5 class="card-title">Your Kind Heart</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-duration="1100">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <i class="fa-solid fa-lightbulb icon-feature floating"></i>
+            <h5 class="card-title">Creative</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-duration="1300">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <i class="fa-solid fa-clock icon-feature floating"></i>
+            <h5 class="card-title">Patient</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-duration="1500">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <i class="fa-solid fa-person-running icon-feature floating"></i>
+            <h5 class="card-title">Efficient</h5>
+          </div>
+        </div>
+      </div>
+     
+      <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-duration="1700">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-plus icon-feature floating"></i>
+            <h5 class="card-title">More & More </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="why-me" class="container py-5">
+    <h2 class="text-center mb-5">What All You Won <i class="fas fa-user-circle"></i></h2>
+    <div id="whyMeContent" class="mt-4">
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="why-me-item"  data-aos="fade-up" data-aos-duration="900">
+            <i class="fa-solid fa-award why-me-icon floating"></i>
+            <div>
+              <h5>Emerald Competition 2023-24</h5>
+              <p>His expertise and dedication to every project were key in securing the top spot in the website making competition.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="why-me-item"  data-aos="fade-up" data-aos-duration="1000">
+            <i class="fa-solid fa-trophy why-me-icon floating"></i>
+            <div>
+              <h5>Bal Vigyan 2023-24</h5>
+              <p>Your brilliant insights and guidance sparked the idea of <strong>Mr Kuda</strong> that led us to victory in the Bal Vigyan.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="why-me-item"  data-aos="fade-up" data-aos-duration="1100">
+            <i class="fa-solid fa-medal why-me-icon floating"></i>
+            <div>
+              <h5>Travelogue 2024-25</h5>
+              <p>He is so proficient in his work and knowledge of all the projects that he won the Travelouge award.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="why-me-item"  data-aos="fade-up" data-aos-duration="1200">
+            <i class="fa-solid fa-crown why-me-icon floating"></i>
+            <div>
+              <h5>Bal Vigyan 2024-25</h5>
+              <p>Just Happy That Our <strong>PRAYAS</strong> Was Enough To Win The Prize And Hopefully Will Solve The Purpose It Was Made For</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="iframe-container" class="container py-5">
+    <h2 class="text-center mb-5">The Legend Laptop <i class="fas fa-heart"></i></h2>
+    <div class="iframe-container">
+      <iframe src="https://my.spline.design/untitled-b270b5dee70fe562649a9472a89138d0/" frameborder="0" width="100%" height="100%"></iframe>
+      <div class="watermark-overlay"></div>
+  </div>
+  </div>
+
+  <div class="parallax" style="background-image: url('');">
+    <h2 class="display-4 text-center parallax-text">Creating Good Memories Together</h2>
+  </div>
+
+  <div id="our-story" class="container py-5">
+    <h2 class="text-center mb-5">The Story Of This Bal Vigyan <i class="fas fa-book-open"></i></h2>
+    <div class="timeline">
+      <div class="timeline-container left"  data-aos="fade-left" data-aos-duration="1000">
+        <div class="timeline-content">
+          <h2>1. The Fun We Had <i class="fa-solid fa-face-smile"></i></h2>
+          <p>Thanks To Way Of Learning Of Our Loving Sir We Learn't About New Things While Having Fun</p>
+        </div>
+      </div>
+      <div class="timeline-container right"  data-aos="fade-right" data-aos-duration="1100">
+        <div class="timeline-content">
+          <h2>2. From Code to Creation <i class="fa-solid fa-code why-me-icon"></i></h2>
+          <p>Just Thinking About Idea Didn't Do Anything So We Had To Implement It</p>
+        </div>
+      </div>
+      <div class="timeline-container left"  data-aos="fade-left" data-aos-duration="1100">
+        <div class="timeline-content">
+          <h2>3. Late Nights, Bright Ideas<i class="fa-solid fa-lightbulb"></i></h2>
+          <p>Just Had Fun While Working With You At Divyansh's Home And Will Always Remember This Unforgettable Memory</p>
+        </div>
+      </div>
+      <div class="timeline-container right"  data-aos="fade-right" data-aos-duration="1100">
+        <div class="timeline-content">
+          <h2>4. Code, Test, Repeat! <i class="fa-solid fa-repeat"></i></h2>
+          <p>Just Implemented Everything According To What We Wanted And Just Hope That Wen Won And We Eventually Did 😊 </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="ifra" class="container py-5">
+    <h2 class="text-center mb-5">What Your Students Say About You <i class="fas fa-comments"></i></h2>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="testimonial">"You're the perfect algorithm, looping through my heart and compiling motivation with every line of code!"
+            </p>
+            <footer class="blockquote-footer">Soumil</footer>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="testimonial">"You are a mentor, a teacher, a colleague. Yet, the best time I've had with you was as a friend."</p>
+            <footer class="blockquote-footer">Divyuzzzz</footer>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="testimonial">"The Most Positive Person I ever met and if talking about motivation he is definitely defeating Sandeep Maheshwari. Got to know him for not a long but learned a lot from him."
+            </p>
+            <footer class="blockquote-footer">Aniket</footer>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="testimonial">"The most adorable person in my life which helped me in every point of my life for coding, helped me to learn new things and guided me"</p>
+            <footer class="blockquote-footer">Vinesh</footer>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="testimonial">"Thank you for your guidance and wisdom, we'll miss you!" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( Himanshi Didn't Reply So I Wrote It Myself )
+            </p>
+            <footer class="blockquote-footer">Himanshi</footer>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="testimonial">"Of all the hard jobs around, one of the hardest is being a good teacher..Which you did it.."</p>
+            <footer class="blockquote-footer">Sukhmani</footer>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="testimonial">"Great teachers empathize with kids, respect them, and believe that each one has something special that can be built upon."
+              — Ann Lieberman, educator and researcher"
+            </p>
+            <footer class="blockquote-footer">Fatema</footer>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="testimonial">"Sir thank you for all your support u gave us, thanks for the knowledge u gave us and u are really a great and awesome teacher, we will really miss u 
+              Hame bhulna Mt milne ayenge"</p>
+            <footer class="blockquote-footer">Shivansh</footer>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="testimonial">"Thank you for not just teaching us about computers, but also inspiring us to think, learn, and grow. Your guidance will always stay with us. Wishing you the best for your future endeavors!"
+            </p>
+            <footer class="blockquote-footer">Aaryaman</footer>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="testimonial">"I just want to say Thank You Sir for your guidance and your support. ONCE AGAIN THANK YOU SO MUCH SIR."</p>
+            <footer class="blockquote-footer">Burhan</footer>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+
+
+
+  <div id="playlist" class="container py-5">
+
+    <h2 class="text-center mb-5">Small Gift From Aniket <i class="fa-solid fa-heart"></i></h2>
+
+    <div id="if">
+      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRk0IIXQLGjmMlTn48WgmZd4g3y5lSgjLy_3PzAjQmPmngbSXKHamfaAbHgikho0w/embed?start=false&loop=false&delayms=5000" frameborder="0" width="1920" height="1109" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>    </div>
+  </div>
+  <div class="bot">
+<button  data-aos="fade-right" data-aos-duration="1100" class="btn btn-custom btn-lg mt-4 mb-5 " onclick="window.location.href='book.html'" id="bot1">Book <i></i></button>
+<button  data-aos="fade-right" data-aos-duration="1100" class="btn btn-custom btn-lg mt-4 mb-5 " onclick="window.location.href='memories.html'" id="bot2">Memories <i></i></button>
+<button  data-aos="fade-right" data-aos-duration="1100" class="btn btn-custom btn-lg mt-4 mb-5 " onclick="window.location.href='ss.html'" id="bot3">Animation <i></i></button>
+  </div>
+<footer class="footer text-center">
+    <div class="container">
+      <p>&copy; 2024 | Created with <i class="fas fa-heart"></i> By Soumil</p>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="dateModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">You've Made Me The Happiest Person! <i class="fas fa-grin-hearts"></i></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <center><p>I'm Thrilled That You've Said Yes, ---! Let's Make It Official So You Don't Deny Later 😊</p></center>
+          <form id="dateForm" action="https://formspree.io/f/xyyqoqan" method="post">
+            <div class="mb-3">
+              <label for="phone" class="form-label"><i class="fas fa-phone-alt"></i> Address Where We Will Meet Later</label>
+              <input type="text" class="form-control" id="phone" name="phone" required>
+           
+            </div>
+            <div class="mb-3">
+              <label for="date" class="form-label"><i class="fas fa-calendar-alt"></i> When Are You Free?</label>
+              <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <div class="mb-3">
+              <label for="time" class="form-label"><i class="fas fa-clock"></i> What Time Works Best For You?</label>
+              <input type="time" class="form-control" id="time" name="time" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label"><i class="fas fa-comment"></i> Any Special Requests Or Things I
+                Should Know?</label>
+              <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-custom btn-lg w-100">Let's Do It ! <i
+                class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="confetti"></canvas>
+
+  <div class="music-notes"></div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="//code.tidio.co/vxbmfcvr3ccycxnmfbgnxoavulrg9ucl.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+
+    const button = document.querySelector('.hover-button');
+    let currentX = 0;
+    let currentY = 0;
+
+    button.addEventListener('mouseover', () => {
+      const buttonWidth = button.clientWidth;
+      const buttonHeight = button.clientHeight;
+
+      // Define the range for movement
+      const moveRange = 300; // Maximum distance to move in pixels
+
+      // Calculate new position within a small range
+      const x = Math.random() * moveRange - moveRange / 9;
+      const y = Math.random() * moveRange - moveRange / 5;
+
+      // Apply the transform property to move the button
+      currentX += x;
+      currentY += y;
+
+      // Ensure the button stays within the viewport bounds
+      const maxX = window.innerWidth - buttonWidth;
+      const maxY = window.innerHeight - buttonHeight;
+
+      currentX = Math.max(0, Math.min(currentX, maxX));
+      currentY = Math.max(0, Math.min(currentY, maxY));
+
+      button.style.transform = `translate(${currentX}px, ${currentY}px)`;
+    });
+
+    function showModal() {
+      new bootstrap.Modal(document.getElementById('dateModal')).show();
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#E6E6FA', '#007AFF', '#0051A3']
+      });
+    }
+
+    function revealWhyMe() {
+      const whyMeContent = document.getElementById('whyMeContent');
+      const surpriseBox = document.querySelector('.surprise-box');
+
+      surpriseBox.style.transform = 'scale(0)';
+      setTimeout(() => {
+        surpriseBox.style.display = 'none';
+        whyMeContent.style.display = 'block';
+        gsap.from('#whyMeContent .why-me-item', {
+          opacity: 0,
+          y: 50,
+          stagger: 0.2,
+          duration: 1,
+          ease: 'back.out(1.7)'
+        });
+      }, 300);
+
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#E6E6FA', '#007AFF', '#0051A3']
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add parallax effect
+    window.addEventListener('scroll', function () {
+      var parallaxElements = document.getElementsByClassName('parallax');
+      for (var i = 0; i < parallaxElements.length; i++) {
+        var windowScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var elementOffset = parallaxElements[i].offsetTop;
+        var currentElementOffset = (elementOffset - windowScrollTop);
+        var parallaxDist = currentElementOffset;
+        var parallaxSpeed = 0.5;
+        parallaxElements[i].style.backgroundPositionY = -(parallaxDist * parallaxSpeed) + "px";
+      }
+    });
+
+    // Heart trail effect
+    document.addEventListener('mousemove', function (e) {
+      var heart = document.createElement('div');
+      heart.className = 'fas fa-heart';
+      heart.style.color = '#007AFF';
+      heart.style.position = 'fixed';
+      heart.style.left = e.clientX + 'px';
+      heart.style.top = e.clientY + 'px';
+      heart.style.pointerEvents = 'none';
+      document.querySelector('.heart-trail').appendChild(heart);
+
+      gsap.to(heart, {
+        y: -100,
+        alpha: 0,
+        duration: 2,
+        ease: "power2.out",
+        onComplete: function () {
+          heart.remove();
+        }
+      });
+    });
+
+
+
+    // Music note animation
+    function createMusicNote() {
+      const musicNotes = ['♪', '♫', '♩', '♬', '♭', '♮'];
+      const note = document.createElement('div');
+      note.className = 'music-note';
+      note.textContent = musicNotes[Math.floor(Math.random() * musicNotes.length)];
+      note.style.left = Math.random() * window.innerWidth + 'px';
+      note.style.top = window.innerHeight + 'px';
+      document.querySelector('.music-notes').appendChild(note);
+
+      gsap.to(note, {
+        y: -window.innerHeight,
+        x: "random(-50, 50)",
+        rotation: "random(-90, 90)",
+        opacity: 0,
+        duration: "random(3, 6)",
+        ease: "power1.out",
+        onComplete: () => {
+          note.remove();
+        }
+      });
+    }
+
+    setInterval(createMusicNote, 300);
+
+
+
+    // Playlist functionality
+    function playSong(songSrc, songTitle) {
+      const audioPlayer = document.getElementById('audioPlayer');
+      audioPlayer.src = songSrc;
+      audioPlayer.play();
+
+    }
+  </script>
+</body>
+
+</html>

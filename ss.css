@@ -1,0 +1,460 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+    height: 100vh;
+    background: conic-gradient(from 45deg, #007aff, #ffffff);
+    animation: rotateLine 2s linear infinite;
+    cursor: url("./pointer.png"), auto;
+}
+
+@keyframes rotateLine {
+    0% { background: conic-gradient(from 45deg, #007aff, #ffffff); }
+    1% { background: conic-gradient(from 51deg, #007aff, #ffffff); }
+    2% { background: conic-gradient(from 57deg, #007aff, #ffffff); }
+    3% { background: conic-gradient(from 63deg, #007aff, #ffffff); }
+    4% { background: conic-gradient(from 69deg, #007aff, #ffffff); }
+    5% { background: conic-gradient(from 75deg, #007aff, #ffffff); }
+    6% { background: conic-gradient(from 81deg, #007aff, #ffffff); }
+    7% { background: conic-gradient(from 87deg, #007aff, #ffffff); }
+    8% { background: conic-gradient(from 93deg, #007aff, #ffffff); }
+    9% { background: conic-gradient(from 99deg, #007aff, #ffffff); }
+    10% { background: conic-gradient(from 105deg, #007aff, #ffffff); }
+    11% { background: conic-gradient(from 111deg, #007aff, #ffffff); }
+    12% { background: conic-gradient(from 117deg, #007aff, #ffffff); }
+    13% { background: conic-gradient(from 123deg, #007aff, #ffffff); }
+    14% { background: conic-gradient(from 129deg, #007aff, #ffffff); }
+    15% { background: conic-gradient(from 135deg, #007aff, #ffffff); }
+    16% { background: conic-gradient(from 141deg, #007aff, #ffffff); }
+    17% { background: conic-gradient(from 147deg, #007aff, #ffffff); }
+    18% { background: conic-gradient(from 153deg, #007aff, #ffffff); }
+    19% { background: conic-gradient(from 159deg, #007aff, #ffffff); }
+    20% { background: conic-gradient(from 165deg, #007aff, #ffffff); }
+    21% { background: conic-gradient(from 171deg, #007aff, #ffffff); }
+    22% { background: conic-gradient(from 177deg, #007aff, #ffffff); }
+    23% { background: conic-gradient(from 183deg, #007aff, #ffffff); }
+    24% { background: conic-gradient(from 189deg, #007aff, #ffffff); }
+    25% { background: conic-gradient(from 195deg, #007aff, #ffffff); }
+    26% { background: conic-gradient(from 201deg, #007aff, #ffffff); }
+    27% { background: conic-gradient(from 207deg, #007aff, #ffffff); }
+    28% { background: conic-gradient(from 213deg, #007aff, #ffffff); }
+    29% { background: conic-gradient(from 219deg, #007aff, #ffffff); }
+    30% { background: conic-gradient(from 225deg, #007aff, #ffffff); }
+    31% { background: conic-gradient(from 231deg, #007aff, #ffffff); }
+    32% { background: conic-gradient(from 237deg, #007aff, #ffffff); }
+    33% { background: conic-gradient(from 243deg, #007aff, #ffffff); }
+    34% { background: conic-gradient(from 249deg, #007aff, #ffffff); }
+    35% { background: conic-gradient(from 255deg, #007aff, #ffffff); }
+    36% { background: conic-gradient(from 261deg, #007aff, #ffffff); }
+    37% { background: conic-gradient(from 267deg, #007aff, #ffffff); }
+    38% { background: conic-gradient(from 273deg, #007aff, #ffffff); }
+    39% { background: conic-gradient(from 279deg, #007aff, #ffffff); }
+    40% { background: conic-gradient(from 285deg, #007aff, #ffffff); }
+    41% { background: conic-gradient(from 291deg, #007aff, #ffffff); }
+    42% { background: conic-gradient(from 297deg, #007aff, #ffffff); }
+    43% { background: conic-gradient(from 303deg, #007aff, #ffffff); }
+    44% { background: conic-gradient(from 309deg, #007aff, #ffffff); }
+    45% { background: conic-gradient(from 315deg, #007aff, #ffffff); }
+    46% { background: conic-gradient(from 321deg, #007aff, #ffffff); }
+    47% { background: conic-gradient(from 327deg, #007aff, #ffffff); }
+    48% { background: conic-gradient(from 333deg, #007aff, #ffffff); }
+    49% { background: conic-gradient(from 339deg, #007aff, #ffffff); }
+    50% { background: conic-gradient(from 345deg, #007aff, #ffffff); }
+    51% { background: conic-gradient(from 351deg, #007aff, #ffffff); }
+    52% { background: conic-gradient(from 357deg, #007aff, #ffffff); }
+    53% { background: conic-gradient(from 3deg, #007aff, #ffffff); }
+    54% { background: conic-gradient(from 9deg, #007aff, #ffffff); }
+    55% { background: conic-gradient(from 15deg, #007aff, #ffffff); }
+    56% { background: conic-gradient(from 21deg, #007aff, #ffffff); }
+    57% { background: conic-gradient(from 27deg, #007aff, #ffffff); }
+    58% { background: conic-gradient(from 33deg, #007aff, #ffffff); }
+    59% { background: conic-gradient(from 39deg, #007aff, #ffffff); }
+    60% { background: conic-gradient(from 45deg, #007aff, #ffffff); }
+}
+
+.container {
+    height: 100vh;
+    width: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    visibility: hidden;
+    position: relative;
+    overflow: hidden;
+}
+
+.container div.six {
+    top: 13px;  
+    z-index: 1;
+}
+
+.container div.seven,
+.container div.eight {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
+
+.container > div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20vh;
+}
+
+.one {
+    font-size: 4.5rem;
+}
+
+.one #name {
+    display: inline;
+    gap: 10px;
+    white-space: pre;
+}
+
+.one > img {
+    vertical-align: middle;
+    margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.two {
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+.three {
+    font-size: 3rem;
+}
+
+.four .text-box {
+    width: 570px;
+    margin: 0 auto;
+    border: 3px solid #aaa;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+}
+
+.text-box p {
+    margin: 0;
+    text-align: left;
+}
+
+.text-box span {
+    visibility: hidden;
+}
+
+.text-box .fake-btn {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    color: #fff;
+    background-color: #25d366;
+    font-weight: bolder ;
+    padding: 5px 8px;
+    border-radius: 3px;
+}
+
+.five p {
+    font-size: 2rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.idea-3 strong {
+    padding: 3px 5px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.five .idea-5 {
+    font-size: 4rem;
+}
+
+.idea-5 span,
+.idea-6 span,
+.wish-hbd span {
+    display: inline-block;
+}
+
+.idea-6 span {
+    font-size: 15rem;
+}
+
+.six {
+    position: relative;
+}
+
+.six img {
+    display: inline-block;
+    max-width: 69%;
+    height: auto;
+}
+
+.six .hat {
+    position: absolute;
+    width: 80px;
+    top: -35px;
+    left: 41.5%;
+    /* transform: scale(0.1); */
+}
+
+.baloons img {
+    display: inline-block;
+    position: absolute;
+    width: 200px;
+}
+
+.baloons img:nth-child(even) {
+    left: 10%;
+}
+
+.baloons img:nth-child(odd) {
+    right: 10%;
+}
+
+.baloons img:nth-child(3n + 0) {
+    left: 30%;
+}
+
+.eight svg {
+    width: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.eight svg:nth-child(1) {
+    top: 7vh;
+    left: 5vw;
+    fill: #bd6ecf;
+}
+
+.eight svg:nth-child(2) {
+    top: 23vh;
+    left: 35vw;
+    fill: #7dd175;
+}
+
+.eight svg:nth-child(3) {
+    top: 33vh;
+    left: 23vw;
+    fill: #349d8b;
+}
+
+.eight svg:nth-child(4) {
+    top: 43vh;
+    left: 57vw;
+    fill: #347a9d;
+}
+
+.eight svg:nth-child(5) {
+    top: 68vh;
+    left: 7vw;
+    fill: #c66053;
+}
+
+.eight svg:nth-child(6) {
+    top: 42vh;
+    left: 77vw;
+    fill: #bfaa40;
+}
+
+.eight svg:nth-child(7) {
+    top: 68vh;
+    left: 83vw;
+    fill: #e3bae8;
+}
+
+.eight svg:nth-child(8) {
+    top: 86vh;
+    left: 37vw;
+    fill: #8762cb;
+}
+
+.eight svg:nth-child(9) {
+    top: 94vh;
+    left: 87vw;
+    fill: #9a90da;
+}
+
+.wish-hbd {
+    font-size: 47px;
+    margin: 0;
+    white-space: normal !important;
+    word-break: normal !important;
+    letter-spacing: normal !important;
+    word-spacing: 10px !important;
+    gap: 10px !important;
+    display: inline;
+    text-align: center;
+}
+
+.wish h3 {
+    font-size: 40px;
+    word-spacing: 20px;
+    display: inline-block;
+}
+
+.wish h5 {
+    font-weight: bolder;
+    font-size: 2rem;
+    margin: 10px 0 0;
+}
+
+.nine p {
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+#replay {
+    z-index: 3;
+    cursor: pointer;
+}
+
+/* Media Queries */
+@media screen and (max-height: 1000px) {
+    .six .hat {
+        left: 40%;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    .six .hat {
+        left: 37%;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .six .hat {
+        left: 32%;
+    }
+}
+
+@media screen and (max-height: 850px) and (max-width: 450px) {
+    .six .hat {
+        left: 32%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 90%;
+    }
+
+    .four .text-box {
+        width: 90%;
+    }
+
+    .text-box .fake-btn {
+        right: 5px;
+        bottom: -38px;
+    }
+
+    .idea-5 span {
+        display: block;
+    }
+
+    .idea-6 span {
+        font-size: 10rem;
+    }
+
+    .six .hat {
+        width: 50px;
+        top: -20px;
+    }
+
+    .wish-hbd {
+        font-size: 2em;
+    }
+
+    .wish h5 {
+        font-size: 1.4rem;
+    }
+
+    .nine p {
+        font-size: 1.5rem;
+        font-weight: lighter;
+    }
+}
+
+#imagePath{
+    padding-bottom: 20px;
+}
+
+.wish-hbd{
+    max-width: 9000px;
+    text-align: center;
+}
+
+.click{
+    position: relative;
+    display: inline-block;
+}
+
+.click .click1{
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.click:hover .click1{
+    visibility: visible;
+    opacity: 1;
+}
+
+.wish h3 {
+    font-size: 40px;
+    word-spacing: 10px;
+}
+
+::selection {
+    color: rgb(0, 0, 0);
+    background: #007aff;
+  }  
+
+  .dp{
+    margin-top: 130px;
+  }
+
+  .batao{
+    margin-top: 5px;
+    border-radius: 50px;
+    margin-right: 10px;
+    background-color: #007aff;
+    border: none;
+    color: white;
+    padding: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .batao:hover{
+    background-color: #0051A3;
+    transform: scale(1.05);
+    color: white;
+  }
+  
+  .batao:active{
+    background-color: #003D7A;
+    transform: scale(1.05);
+    color: white;
+  }
